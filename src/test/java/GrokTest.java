@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Random;
 
+
+// 2021-Mar-03 11:40am
+
 class GrokTest {
     private static Random rand;
 
@@ -50,7 +53,8 @@ class GrokTest {
     @Test
     void tookHit() {
         int power = rand.nextInt(800);
-        int expected = (power % 5) - 5;
+        int expected = (power % 5);
+        expected = expected != 0? expected - 5:0;
         Grok aGrok = new Grok(power);
         while (aGrok.getPowerLevel() > 0){
             aGrok.tookHit();
